@@ -1,0 +1,13 @@
+[Unit]
+Description=zookeeper.service
+After=network.target
+[Service]
+Type=forking
+User=root
+
+Environment=/home/terminus/software/zookeeper-3.4.8/
+ExecStart=/home/terminus/software/zookeeper-3.4.8/bin/zkServer.sh start
+ExecStop=/home/terminus/software/zookeeper-3.4.8/bin/zkServer.sh stop
+ExecReload=/home/terminus/software/zookeeper-3.4.8/bin/zkServer.sh restart
+[Install]
+WantedBy=multi-user.target
